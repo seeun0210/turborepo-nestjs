@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: logger
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/seeun0210/turborepo-nestjs.git"
+    targetRevision: main
+    path: apps/logger/k8s
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: turborepo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

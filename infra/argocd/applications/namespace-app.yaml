@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: turborepo-namespace
+  name: turborepo
   namespace: argocd
 spec:
   project: default
